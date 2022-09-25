@@ -48,3 +48,21 @@ class Counties:
         except MissingArgumentError as err:
             stderr.write(f'{err}\n')
 
+    def filter_by_year(self, year: str) -> list[dict] | None:
+        """
+
+        :param year:
+        :return:
+        """
+        try:
+            return list(filter(lambda x: x[self.year_key] == year, self.data))
+        except KeyError as err:
+            stderr.write(f'The key {err} is not present in the dictionary.\n')
+        except AttributeError as err:
+            stderr.write(f'There was probably something wrong retrieving the data. {err}\n')
+        except TypeError as err:
+            stderr.write(f'There was probably something wrong retrieving the data. {err}\n')
+
+        return None
+
+   
