@@ -105,4 +105,35 @@ class Counties:
 
         return None
 
-   
+    def close_to_average_per_year(self, year: str, closeness: int) -> list[dict] | None:
+        """
+        Returns a list of all the counties that are within a given closeness of the average
+        population for a given year.
+        :param year:
+        :param closeness:
+        :return:
+        """
+        try:
+
+            if not isinstance(closeness, int):
+                raise TypeError('The closeness must be an integer.')
+
+            if not self.average_population_per_year(year):
+                raise NoResultFromFunctionError('average_population_per_year')
+            if not self.filter_by_year(year):
+                raise NoResultFromFunctionError('filter_by_year')
+
+            average: float = self.average_population_per_year(year)
+            return list(filter(lambda x: abs(x[self.population_key] - average) <= closeness,
+                               self.filter_by_year(year)))
+
+        except KeyError as err:
+            stderr.write(f'The key {err} is not present in the dictionary.\n')
+        except TypeError as err:
+            stderr.write(f'{err}\n')
+        except NoResultFromFunctionError as err:
+            stderr.write(f'{err}\n')
+
+        return None
+
+    
