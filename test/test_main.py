@@ -18,7 +18,7 @@ def fixture_mock_counties() -> Counties:
     :return: Counties.
     """
 
-    with open('resources/test.json', encoding='utf-8') as json_file:
+    with open('test/resources/test.json', encoding='utf-8') as json_file:
         data: dict[list] = json.load(json_file)
 
     with responses.RequestsMock() as mock:
