@@ -6,7 +6,7 @@ from sys import stderr
 from dataclasses import dataclass
 from requests import get, exceptions
 from dotenv import load_dotenv
-from src.exceptions_main import MissingArgumentError, NoResultFromFunctionError
+from exceptions_main import MissingArgumentError, NoResultFromFunctionError
 
 load_dotenv()
 counties_url: str = os.environ.get("COUNTIES-URL")

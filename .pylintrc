@@ -1,0 +1,3 @@
+[MASTER]
+ignore-paths = ^test.*$
+disable=import-error

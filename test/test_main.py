@@ -1,7 +1,6 @@
 """
 Contains the exceptions used in the project.
 """
-# pylint: skip-file
 import json
 import pytest
 import responses
