@@ -136,4 +136,31 @@ class Counties:
 
         return None
 
-    
+    def close_to_average(self, closeness: int) -> list[dict]:
+        """
+        Returns a list of all the counties that are within a given closeness of the average
+        population for all years.
+        :param closeness:
+        :return:
+        """
+        try:
+
+            if not isinstance(closeness, int):
+                raise TypeError('The closeness must be an integer.')
+            if not self.years_in_dataset():
+                raise NoResultFromFunctionError('years_in_dataset')
+
+            for year in self.years_in_dataset():
+                for element in self.close_to_average_per_year(year, closeness):
+                    yield element
+
+        except TypeError as err:
+            stderr.write(f'{err}\n')
+        except NoResultFromFunctionError as err:
+            stderr.write(f'{err}\n')
+
+
+counties = Counties(counties_url, data_key='data')
+
+for result in counties.close_to_average(100):
+    print(f'{result}\n')
