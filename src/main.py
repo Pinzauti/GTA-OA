@@ -65,4 +65,20 @@ class Counties:
 
         return None
 
+    def years_in_dataset(self) -> set[str | int] | None:
+        """
+        Returns a set of all the years in the dataset.
+        :return:
+        """
+        try:
+            return set(element[self.year_key] for element in self.data)
+        except KeyError as err:
+            stderr.write(f'The key {err} is not present in the dictionary.')
+        except AttributeError as err:
+            stderr.write(f'{err}\n')
+        except TypeError as err:
+            stderr.write(f'{err}\n')
+
+        return None
+
    
