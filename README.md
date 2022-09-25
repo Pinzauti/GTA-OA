@@ -1,5 +1,5 @@
 # GTA OA
-[![Python application](https://github.com/Pinzauti/GTA-OA/actions/workflows/python-app.yml/badge.svg)](https://github.com/Pinzauti/GTA-OA/actions/workflows/python-app.yml)
+[![Tests](https://github.com/Pinzauti/GTA-OA/actions/workflows/python-app.yml/badge.svg)](https://github.com/Pinzauti/GTA-OA/actions/workflows/python-app.yml)
 [![Pylint](https://github.com/Pinzauti/GTA-OA/actions/workflows/pylint.yml/badge.svg)](https://github.com/Pinzauti/GTA-OA/actions/workflows/pylint.yml)
 
 GUI Technologies & Applications Online Assessment
