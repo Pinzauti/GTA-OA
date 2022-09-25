@@ -167,3 +167,7 @@ class TestCloseToAverageCounties:
     def test_years_in_dataset_wrong_return_value(self, mock_counties: Counties) -> None:
         with patch.object(mock_counties, 'years_in_dataset', return_value='test'):
             assert not list(mock_counties.close_to_average(CLOSENESS))
+
+    def test_no_close_to_average_per_year(self, mock_counties: Counties) -> None:
+        with patch.object(mock_counties, 'close_to_average_per_year', return_value=None):
+            assert not list(mock_counties.close_to_average(CLOSENESS))
