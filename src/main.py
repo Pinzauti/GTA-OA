@@ -81,4 +81,28 @@ class Counties:
 
         return None
 
+    def average_population_per_year(self, year: str) -> float | None:
+        """
+        Returns the average population for a given year.
+        :param year:
+        :return:
+        """
+        filter_by_year: list[dict] = self.filter_by_year(year)
+        try:
+
+            if not filter_by_year:
+                raise NoResultFromFunctionError('filter_by_year')
+
+            return sum(element[self.population_key] for element in filter_by_year) / len(
+                filter_by_year)
+
+        except KeyError as err:
+            stderr.write(f'The key {err} is not present in the dictionary.\n')
+        except TypeError as err:
+            stderr.write(f'{err}\n')
+        except NoResultFromFunctionError as err:
+            stderr.write(f'{err}\n')
+
+        return None
+
    
