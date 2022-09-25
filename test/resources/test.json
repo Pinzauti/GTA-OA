@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "ID County": "05000US01071",
+      "County": "Jackson County, AL",
+      "ID Year": 2020,
+      "Year": "2020",
+      "Population": 51765,
+      "Slug County": "jackson-county-al"
+    },
+    {
+      "ID County": "05000US01073",
+      "County": "Jefferson County, AL",
+      "ID Year": 2020,
+      "Year": "2020",
+      "Population": 658615,
+      "Slug County": "jefferson-county-al"
+    },
+    {
+      "ID County": "05000US01075",
+      "County": "Lamar County, AL",
+      "ID Year": 2020,
+      "Year": "2020",
+      "Population": 13854,
+      "Slug County": "lamar-county-al"
+    },
+    {
+      "ID County": "05000US01075",
+      "County": "Lamar County, AL",
+      "ID Year": 2020,
+      "Year": "2020",
+      "Population": 241410,
+      "Slug County": "lamar-county-al"
+    }
+  ],
+  "source": [
+    {
+      "measures": [
+        "Population"
+      ],
+      "annotations": {
+        "source_name": "Census Bureau",
+        "source_description": "The American Community Survey (ACS) is conducted by the US Census and sent to a portion of the population every year.",
+        "dataset_name": "ACS 5-year Estimate",
+        "dataset_link": "http://www.census.gov/programs-surveys/acs/",
+        "table_id": "B01003",
+        "topic": "Diversity",
+        "subtopic": "Demographics"
+      },
+      "name": "acs_yg_total_population_5",
+      "substitutions": []
+    }
+  ]
+}
