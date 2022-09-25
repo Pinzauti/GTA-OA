@@ -1,11 +1,12 @@
 """
 Contains the exceptions used in the project.
 """
+# pylint: skip-file
 import json
 import pytest
 import responses
-from src.main import Counties, counties_url
 from mock import patch
+from src.main import Counties, counties_url
 
 YEAR = '2020'
 CLOSENESS = 100
