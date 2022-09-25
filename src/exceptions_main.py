@@ -5,7 +5,7 @@ Contains the exceptions used in the project.
 
 class NoResultFromFunctionError(Exception):
     """
-    TODO
+    Exception raised when a function does not return a value.
     """
     def __init__(self,  function: str = None, message: str = 'The function returned no value.'):
         self.message = message
@@ -19,7 +19,7 @@ class NoResultFromFunctionError(Exception):
 
 class MissingArgumentError(Exception):
     """
-    TODO
+    Exception raised when one of two arguments is missing.
     """
     def __init__(self,  message: str = 'Missing argument.'):
         self.message = message

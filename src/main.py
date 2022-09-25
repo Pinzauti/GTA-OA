@@ -15,7 +15,7 @@ counties_url: str = os.environ.get("COUNTIES-URL")
 @dataclass
 class Counties:
     """
-    TODO
+    This class manage the dataset, returning some metrics and filtering the data.
     """
     url: str = None
     source: dict | list[dict] = None
@@ -25,7 +25,8 @@ class Counties:
 
     def __post_init__(self) -> None:
         """
-        TODO
+        We retrieve the data from the url if provided or from the argument source, if provided.
+        We filter it by the key data_key, if present.
         :return: None.
         """
         try:
@@ -50,9 +51,9 @@ class Counties:
 
     def filter_by_year(self, year: str) -> list[dict] | None:
         """
-
-        :param year:
-        :return:
+        We filter the data by the year.
+        :param year: The year to filter.
+        :return: A list of entries filtered by the year.
         """
         try:
             return list(filter(lambda x: x[self.year_key] == year, self.data))
@@ -67,8 +68,8 @@ class Counties:
 
     def years_in_dataset(self) -> set[str | int] | None:
         """
-        Returns a set of all the years in the dataset.
-        :return:
+        We seek the different years present in the dataset.
+        :return: A set of all the years in the dataset.
         """
         try:
             return set(element[self.year_key] for element in self.data)
@@ -84,8 +85,8 @@ class Counties:
     def average_population_per_year(self, year: str) -> float | None:
         """
         Returns the average population for a given year.
-        :param year:
-        :return:
+        :param year: The year to filter.
+        :return: The average population for the year.
         """
         filter_by_year: list[dict] = self.filter_by_year(year)
         try:
@@ -109,9 +110,9 @@ class Counties:
         """
         Returns a list of all the counties that are within a given closeness of the average
         population for a given year.
-        :param year:
-        :param closeness:
-        :return:
+        :param year: The year to filter.
+        :param closeness: The closeness to the average.
+        :return: A list of all the counties that are within a given closeness of the average.
         """
         try:
 
@@ -139,9 +140,9 @@ class Counties:
     def close_to_average(self, closeness: int) -> list[dict]:
         """
         Returns a list of all the counties that are within a given closeness of the average
-        population for all years.
-        :param closeness:
-        :return:
+        population for a given years, for all years.
+        :param closeness: The closeness to the average.
+        :return: A list of all the counties that are within a given closeness of the average.
         """
         try:
 

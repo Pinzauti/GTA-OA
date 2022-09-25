@@ -27,9 +27,6 @@ def fixture_mock_counties() -> Counties:
 
 
 class TestFilterByYearCounties:
-    """
-    TODO
-    """
 
     def test_correct_result(self, mock_counties: Counties) -> None:
         assert mock_counties.filter_by_year(YEAR) == [{
@@ -82,9 +79,6 @@ class TestFilterByYearCounties:
 
 
 class TestYearsInDatasetCounties:
-    """
-    TODO
-    """
 
     def test_correct_result(self, mock_counties: Counties) -> None:
         assert mock_counties.years_in_dataset() == {'2020'}
@@ -103,9 +97,6 @@ class TestYearsInDatasetCounties:
 
 
 class TestAveragePopulationPerYearCounties:
-    """
-    TODO
-    """
 
     def test_correct_result(self, mock_counties: Counties) -> None:
         assert mock_counties.average_population_per_year(YEAR) == 241411.0
@@ -127,9 +118,6 @@ class TestAveragePopulationPerYearCounties:
 
 
 class TestCloseToAveragePerYearCounties:
-    """
-    TODO
-    """
 
     def test_correct_result(self, mock_counties: Counties) -> None:
         assert mock_counties.close_to_average_per_year(YEAR, CLOSENESS) == [{
@@ -158,9 +146,6 @@ class TestCloseToAveragePerYearCounties:
 
 
 class TestCloseToAverageCounties:
-    """
-    TODO
-    """
 
     def test_correct_result(self, mock_counties: Counties) -> None:
         assert list(mock_counties.close_to_average(CLOSENESS)) == [{
