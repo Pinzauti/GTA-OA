@@ -1,5 +1,5 @@
 """
-Contains the exceptions used in the project.
+Contains the tests of the project.
 """
 import json
 import pytest
