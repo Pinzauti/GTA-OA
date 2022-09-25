@@ -5,7 +5,7 @@ import json
 import pytest
 import responses
 from mock import patch
-from src.main import Counties, counties_url
+from main import Counties, counties_url
 
 YEAR = '2020'
 CLOSENESS = 100
@@ -18,7 +18,7 @@ def fixture_mock_counties() -> Counties:
     :return: Counties.
     """
 
-    with open('test/resources/test.json', encoding='utf-8') as json_file:
+    with open('resources/test.json', encoding='utf-8') as json_file:
         data: dict[list] = json.load(json_file)
 
     with responses.RequestsMock() as mock:
